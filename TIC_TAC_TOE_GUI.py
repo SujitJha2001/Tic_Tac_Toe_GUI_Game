@@ -61,7 +61,8 @@ b9=Button(root,text='',font="Times 35 bold",bg='white',fg='black',width=12)
 b9.grid(row=3,column=2,padx=5,pady=5,sticky='snew')
 b9.config(command=lambda:ButtonClick(9))
 
-b10=Button(root,font="Times 15 bold",text='RESTART',bg='cadet blue',fg='white',height=2,width=10)
+b10Photo = PhotoImage(file='Restart and enter.png')
+b10=Button(root,font="Times 15 bold",image=b10Photo ,bg='white',fg='white',height=2,width=10)
 b10.grid(row=4,column=1,padx=5,pady=5,sticky='snew')
 b10.config(command=lambda:Restart())
 
@@ -357,5 +358,10 @@ for i in range(1,4):
 
 for i in range(3):
     root.grid_columnconfigure(i,weight=1)
+
+def enter_function(event):
+    b10.invoke()
+root.bind('<Return>',enter_function)
+
 
 root.mainloop()
